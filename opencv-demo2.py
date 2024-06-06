@@ -1,6 +1,6 @@
 import cv2 as cv
 import sys
-img = cv.imread(r'logo.png')
+img = cv.imread(r'logo.png', cv.IMREAD_GRAYSCALE)
 if img is None:
     sys.exit('Could not read the image!')
 print('-' * 80)
@@ -10,13 +10,9 @@ dimensions = img.shape
 print(dimensions)
 rows = dimensions[0]
 columns = dimensions[1]
-color = dimensions[2]
+# color = dimensions[2]
 print(f'Width: {columns}, Height: {rows}.  Resolution: {str(rows) + " X " + str(columns)}. '
-      f'Pixel: {rows*columns}. Channels: {color}')
-if color:
-    print('It is a colorful image!')
-else:
-    print('It is a gray image!')
+      f'Pixel: {rows*columns}.')
 print('-' * 80)
 size = img.size
 print('Size is : ', size)
@@ -25,14 +21,8 @@ dtype = img.dtype
 print('Data type is : ', dtype)
 print('-' * 80)
 # some pixel channel values
-b, g, r = img[6, 40]
-print(f'Channel values are , Blue {b}, Green {g}, Red {r}.')
-b, g, r = img[480, 40]
-print(f'Channel values are , Blue {b}, Green {g}, Red {r}.')
-print(f'Channel values are , Blue {img[480, 40, 0]}, Green {img[480, 40, 1]}, Red {img[480, 40, 2]}.')
-print('-' * 80)
-# set channel values
-img[10, 30] = (0, 0, 255)
+i = img[6, 40]
+print(f'Channel values {i}.')
 top_corner = img[0:50, 0:50]
 print('Top corner type is : ', type(top_corner))
 # show image

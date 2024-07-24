@@ -85,6 +85,8 @@ arr_t2 = np.array([
 print('Array 1:\n', arr1)
 print('Array 2:\n', arr2)
 arr3_1 = np.vstack([arr1, arr2])
+arr3_2 = np.row_stack([arr1, arr2])
 # print('Array 3:\n', arr3_1)
 # arr_t3 = np.vstack([arr_t1, arr_t2])
 print('Array temp 3-1:\n', arr3_1)
+print('Array temp 3-2:\n', arr3_2)

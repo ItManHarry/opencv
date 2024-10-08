@@ -7,7 +7,7 @@ def draw_circle(event, x, y, flags, param):
     if event == cv2.EVENT_LBUTTONDBLCLK:
         cv2.circle(image, (x, y), 10, constant.ALL_COLORS['magenta'], -1)
     if event == cv2.EVENT_MOUSEMOVE:
-        print(f'Mouse move ({x}:{y})')
+        print(f'Mouse move ({x}: {y})')
     if event == cv2.EVENT_LBUTTONUP:
         print('Left button up...')
     if event == cv2.EVENT_LBUTTONDOWN:
